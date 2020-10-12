@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // console.log(Object.prototype);
+        console.log(Array.prototype);
+        Array.prototype.sum = function() {
+            var sun = 0;
+            for (var i = 0; i < this.length; i++) {
+                sum += this[i];
+            }
+        }
+        var arr = [1, 2, 12, 122, 144];
+        console.log(arr.sum());
+    </script>
+</body>
+
+</html>

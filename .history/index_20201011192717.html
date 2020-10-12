@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // console.log(Object.prototype);
+        // console.log(Array.prototype);
+        // Array.prototype.sum = function() {
+        //     var sum = 0;
+        //     for (var i = 0; i < this.length; i++) {
+        //         sum += this[i];
+        //     }
+        //     return sum;
+        // }
+        // var arr = [1, 2, 3, 4, 5];
+        // console.log(arr.sum());
+
+        // function fn(arg1) {
+        //     console.log("hello" + arg1);
+        // }
+        // var obj = {
+        //     name: "cloud"
+        // };
+        // fn(1);
+        // fn.call(this, 2);
+        // fn.call(obj, 3);
+        function Father(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Father.prototype.run = function() {
+            console.log("running");
+        }
+
+        function Son(name, age) {
+            Father.call(this, name, age);
+        }
+        // Son.prototype = Father.prototype; //这样没有实现继承，只是子构造函数的原型改为了父构造函数的原型
+        Son.prototype = new Father();
+        Son.prototype.constructor = Son;
+        var s = new Son("cloud", 18);
+        console.log(s.name + ":" + s.age);
+        console.log(s);
+        array.forEach(element => {
+
+        });
+    </script>
+</body>
+
+</html>
